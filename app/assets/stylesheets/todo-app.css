@@ -3,10 +3,10 @@
 }
 
 body{
-    /* display: ; */
+    display: flex;
     min-height: 100vh;
     justify-content: center;
-    align-content: center; 
+    /* align-content: center;  */
 }
 
 h4{
@@ -50,13 +50,17 @@ h4{
     
 }
 
+.date{
+    margin-left: 5px;
+}
+
 .render{
     /* margin-left: 120px; */
     margin-top: 20px;
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
+    margin-right: auto;
     
 }
 
@@ -72,7 +76,7 @@ p{
 }
 
 .check{
-    display: block;
+    display: flex;
     position: relative;
     font-size: 15px;
     padding-left: 30px;
@@ -80,5 +84,5 @@ p{
 }
 
 .container{
-    text-align: center;
+    /* text-align: center; */
 }

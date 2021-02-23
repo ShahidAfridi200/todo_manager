@@ -3,10 +3,16 @@
    <small><%= todos.completed.count %>/<%= todos.count  %></small>
    <% todos.each do |todo| %>
    <div class="check">
-   <input type="checkbox" class="checkbox"/> 
+   <%= form_with(url: "/todos/#{todo.id}", method:"put") do %>
+   <input type="checkbox" 
+   class="checkbox" 
+   name="completed" <%= todo.completed ? "checked" : " " %>
+   onclick="this.form.submit()"
+   /> 
+   <% end %>
    <%= todo.todo_text%>
    <% if show_due_date%>
-   <small><%= todo.due_date.to_s(:short)%><small>
+   <small class="date"><%= todo.due_date.to_s(:short)%><small>
    <% end%>
    <%# <a href="javascript:void(0)" class="TodoItem-delete"> %>
    <img src="trash-can-outline.png" /><br/>
