@@ -1,0 +1,15 @@
+   <div class="render">
+   <h4><%=section_title%></h4>
+   <small><%= todos.completed.count %>/<%= todos.count  %></small>
+   <% todos.each do |todo| %>
+   <div class="check">
+   <input type="checkbox" class="checkbox"/> 
+   <%= todo.todo_text%>
+   <% if show_due_date%>
+   <small><%= todo.due_date.to_s(:short)%><small>
+   <% end%>
+   <%# <a href="javascript:void(0)" class="TodoItem-delete"> %>
+   <img src="trash-can-outline.png" /><br/>
+   </div>
+   <% end %>
+   </div>

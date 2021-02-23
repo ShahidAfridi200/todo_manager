@@ -1,0 +1,31 @@
+ <div class="container">
+   <h2>My To-do List</h2>
+   <form action="/todos" method="POST">
+   <div class="box">
+   <input type="text" id="Todo" placeholder="What's next?" name="todo_text"/>
+   <input type="date" id="date" name="due_date"/>
+   <input type="submit" class="btn" onclick="todo()" value="Add" /><br/>
+   </div>
+   </form>
+</div>
+<div>
+<%= render partial: "todo_section",
+ locals: {section_title:"Overdue",
+ todos: Todo.overdue,
+ show_due_date: true
+ } 
+ %>
+</div>
+<%= render partial: "todo_section",
+ locals: {section_title:"Due Today",
+ todos: Todo.due_today,
+ show_due_date: false
+ } 
+ %>
+
+<%= render partial: "todo_section",
+ locals: {section_title:"Due Later",
+ todos: Todo.due_later,
+ show_due_date: true
+ }
+ %>
