@@ -15,7 +15,9 @@
    <small class="date"><%= todo.due_date.to_s(:short)%><small>
    <% end%>
    <%# <a href="javascript:void(0)" class="TodoItem-delete"> %>
-   <img src="trash-can-outline.png" /><br/>
+   <%= form_with(url: "/todos/#{todo.id}", method:"delete") do %>
+  <input type='image' src="trash-can-outline.png">
+  <% end%>
    </div>
    <% end %>
    </div>

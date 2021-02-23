@@ -1,13 +1,12 @@
 <div>
  <div class="container">
    <h2>My To-do List</h2>
-   <form action="/todos" method="POST">
+   <%= form_with(url: "/todos/#{todo.id}", method:"post") do %>
    
    <input type="text" id="Todo" placeholder="What's next?" name="todo_text"/>
    <input type="date" id="date" name="due_date"/>
    <input type="submit" class="btn" onclick="todo()" value="Add" /><br/>
-   
-   </form>
+   <% end %>
 </div>
 <div>
 <%= render partial: "todo_section",
