@@ -11,7 +11,20 @@
   </head>
 
   <body>
-  <%# <h1 style="background-color: darkblue; color: white; ">Welcome to To-Do App</h1> %>
+  <div>
+  <% if @current_user%>
+  <p class="userheader">
+  Welcome <%= @current_user.first_name%>
+  <%= link_to "Sign-Out", destroy_session_path, method: "delete"%>
+  </p>
+  <% end %>
+
+  <% if flash[:error] %>
+  <p class="Flash">
+  <%= flash[:error] %>
+  </p>
+  <%end%>
+  </div>
     <%= yield %>
   </body>
 </html>
