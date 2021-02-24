@@ -17,6 +17,12 @@ test:
   <<: *default
   database: test_saas_db
 
+# production:
+#   <<: *default
+#   database: prod_saas_db
+
 production:
-  <<: *default
-  database: prod_saas_db
+  database: example_production
+  adapter: postgresql
+  host: localhost
+  password:
